@@ -1,0 +1,11 @@
+@font-face {
+	/* font-family: 自己定义的字体名; */
+	font-family: 'ali';
+	/* url里是字体的路径 */
+	src: url("./AlimamaDongFangDaKai-Regular.woff")format("woff"),
+		url("./AlimamaDongFangDaKai-Regular.woff2")format("woff2")
+}
+body{
+	font-family: 'ali';
+}
+
