@@ -1,57 +1,81 @@
 <template>
-  <div id="app" class="my-login-box">
-    <h2 style="color: #03e9f4">中国波比集团</h2>
-    <form @submit.prevent>
-      <div class="user-box">
-        <input type="text" v-model="loginParm.nickName">
-        <label>呢称</label>
-      </div>
-      <div class="user-box">
-        <input type="password" v-model="loginParm.password">
-        <label>密码</label>
-      </div>
-      <a href="#" class="userlogin" @click="login" style="margin-top: 7px">
-        <span></span> 登录
-      </a>
-    </form>
-  </div>
+	<div id="app" class="my-login-box">
+		<span style="color: #03e9f4">中国波比集团</span>
+		<form @submit.prevent>
+			<div class="user-box">
+				<input type="text" v-model="loginParm.nickName">
+				<label>呢称</label>
+			</div>
+			<div class="user-box">
+				<input type="password" v-model="loginParm.password">
+				<label>密码</label>
+			</div>
+			<a href="#" class="userlogin" @click="login" style="margin-top: 7px">
+				<span></span> 登录
+			</a>
+			<div class="remember_me">
+				<input  type="checkbox" v-model="checked">记住密码</input>
+			</div>
+		</form>
+	</div>
 </template>
 
 <script>
-  export default {
-    name: 'LoginUser',
-    data: function() {
-      return {
-        loginParm: {
-          nickName: null,
-          password: null
-        }
-      }
-    },
-    methods: {
-      login() {
-        
-        this.$http.goLogin(this.loginParm).then(res=>{
-          this.$router.push('/main');
-        })
-        
-      }
-    }
-  }
+import { CheckboxButton } from 'element-ui';
+import logoDiv from '../Logo.vue'; 
+export default {
+	
+	components:{
+		logoDiv
+	},
+	name: 'LoginUser',
+	data: function () {
+		return {
+			loginParm: {
+				nickName: null,
+				password: null
+			},
+			checked:false
+		}
+	},
+	mounted(){
+		let nickName = localStorage.getItem('nickName')
+		if(nickName){
+			
+			this.loginParm.nickName = nickName,
+			this.loginParm.password = atob(localStorage.getItem('password'))
+			this.checked =true
+		}
+	},
+	methods: {
+		login() {
+			this.$http.goLogin(this.loginParm).then(res => {
+				  // 登录成功后提交 mutation 更新状态
+       			this.$store.dispatch('login', res);
+				this.$router.push('/main');
+				if(this.checked){
+					localStorage.setItem('nickName',this.loginParm.nickName)
+					localStorage.setItem('password',btoa(this.loginParm.password))
+				
+				}else{
+					localStorage.removeItem('nickName')
+					localStorage.removeItem('password')
+				}
+				console.log(this.$store.getters.user)
+			}).catch(error => {
+				// 登录失败，弹出友好提示
+				this.$message.error('登录失败，请检查用户名和密码')
+				// 或者使用其他提示方式，比如模态框、消息通知等
+			});
+
+		}
+	}
+}
 </script>
 
-<style>
-@import url(../../assets/font/font.css);
-@import url(../../assets/res_set.css);
-body {
-	background-color: #000000;
-	min-height: 98vh;
-	perspective: 1500px;
-	margin: 0;
-	padding: 0;
-	background: linear-gradient(#141e30, #243b55);
-  font-family: 'ali';
-}
+<style scoped>
+
+@import url('../../assets/res_set.css');
 
 div#bgDIV {
 	width: 100vw;
@@ -79,12 +103,26 @@ html {
 	box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
 	border-radius: 10px;
 }
-
-.my-login-box h2 {
+.remember_me{
+	position: relative;
+    bottom: 100px;
+    left: 105px;
+    color: #03e9f4;
+    width: 100px;
+    height: 24px;
+}
+.remember_me > input{
+	position: relative;
+    bottom: -2px;
+}
+.my-login-box >span {
+	display: block;
 	margin: 0 0 30px;
 	padding: 0;
 	color: #fff;
 	text-align: center;
+	font-size: 25px;
+	letter-spacing: 5px;
 }
 
 .my-login-box .user-box {
@@ -134,6 +172,7 @@ html {
 	transition: .5s;
 	margin: 100px;
 	letter-spacing: 4px;
+	right: -19px;
 
 }
 
@@ -214,3 +253,4 @@ html {
 
 
 </style>
+

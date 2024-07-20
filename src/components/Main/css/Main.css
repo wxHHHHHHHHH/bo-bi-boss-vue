@@ -1,0 +1,226 @@
+body > div > div > div {
+  /* 设置宽度 */
+  width: 1226px;
+  /* 设置高度 */
+  height: 100px;
+  /* 使它居中 上下不管 居中 */
+  margin: 20px auto;
+}
+
+
+body > div > div > div.header > .logo {
+  float: left;
+  width: 400px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  border-radius: 50px;
+  background-image: linear-gradient(
+    to right,
+    #03a9f4,
+    #f441a5,
+    #ffeb3d,
+    #09a8f4
+  );
+  background-size: 400%;
+  font-size: 50px;
+  animation: sun 16s infinite;
+}
+
+body > div > div > div.header > .logo > a {
+  display: inline-block;
+  color: #fff;
+  width: 400px;
+}
+
+@keyframes sun {
+  100% {
+    background-position: -400% 0;
+  }
+}
+
+body > div > div > div.header > .app_bar > ul > li {
+  float: left;
+}
+
+body > div > div > div.header > .app_bar > ul > li > a {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  color: #fff;
+}
+.head_portrait{
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  color: #fff;
+}
+.head_portrait > span.nickName{
+  position: relative;
+  bottom: -71%;
+  margin: 0 60px;
+}
+.el-avatar{
+  margin: auto 74px;
+  width: 50px;
+  height: 50px;
+}
+body > div > div > div.header > .app_bar > ul > li > a:hover {
+  background-color: #00ffff;
+  color: #000000;
+}
+
+.el-carousel {
+  width: 1226px;
+  height: 300px;
+}
+
+
+body
+  > div
+  > div
+  > div.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden
+  > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal
+  > span {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  padding: 0 5px;
+
+  margin: 0 10px;
+  border: 2px solid #fff;
+  border-color: hsla(180, 50%, 66%, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.4);
+}
+
+body > div > div > .swiper > .swiper-button-prev {
+  color: #000;
+}
+body > div > div > .swiper > .swiper-button-next {
+  color: #000;
+}
+
+/* 脚步图片调整 */
+body > div > div > .foot > ul > li {
+  /* display: inline-block; */
+  float: left;
+  width: 306.5px;
+  height: 300px;
+}
+body > div > div > .foot > ul > li > a {
+  display: inline-block;
+  width: 306.5px;
+  height: 300px;
+  position: absolute;
+}
+
+body > div > div > .foot > ul > li > a:hover span {
+  background-image: linear-gradient(
+    to right,
+    #03a9f4,
+    #f441a5,
+    #ffeb3d,
+    #09a8f4
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* 设置文本颜色为透明，使得背景渐变可以显示出来 */
+  font-size: 45px;
+}
+
+body > div > div > .foot > ul > li > a > img {
+  /* display: inline-block; */
+  width: 306.5px;
+  height: 300px;
+}
+body > div > div > .foot > ul > li > a > img {
+  /* display: inline-block; */
+  width: 306.5px;
+  height: 300px;
+}
+body > div > div > div.foot > ul > li > a > span {
+  display: inline-block;
+  position: relative;
+  font-size: 50px;
+  height: 50px;
+  width: 100%;
+  color: #00ffff;
+  text-align: center;
+}
+
+/* 个人信息 */
+#app > div > div.header > div.app_bar > ul > li:nth-child(4) > div.el-drawer__wrapper {
+    position: fixed;
+    top: -20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.el-drawer__wrapper>div>div>header.el-drawer__header {
+    align-items: center ;
+    color: #72767b;
+    display: flex; 
+    margin-bottom: 32px;
+    padding: 35px 20px 0;
+    margin: auto;
+    font-size: 50px;
+}
+.user_info{
+  padding-top: 20px;
+}
+.user_info > span{
+  display: inline-block;
+  width: 200px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 25px;
+}
+.update_password{
+    position: absolute;
+    /* padding-bottom: 10px; */
+    width: 400px;
+    height: 100px;
+    border-radius: 50px;
+    background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(245, 228, 212, 0.25) 4%, rgba(255, 255, 255, 0) calc(4% + 1px)), radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%), linear-gradient(135deg, #ff0000 0%, #000036 100%), radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%), linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%); background-blend-mode: normal, normal, screen, overlay, normal;
+    background-size: 400%;
+    font-size: 50px;
+    animation: sun-dccace22 16s infinite;
+    bottom: 20px;
+    text-align: center;
+    align-content: center;
+    padding-left: 19px;
+    animation: sun 8s infinite;
+}
+.update_password >span{
+  position: relative;
+}
+#app > div > div.header > div.app_bar > ul > li:nth-child(4) > div.el-drawer__wrapper > div > div.my-drawer{
+    background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(245, 228, 212, 0.25) 4%, rgba(255, 255, 255, 0) calc(4% + 1px)), radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%), linear-gradient(135deg, #ff0000 0%, #000036 100%), radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%), linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%); background-blend-mode: normal, normal, screen, overlay, normal;
+    background-size: cover;
+    background-position: center;
+}
+
+#app > div > div.header > div.app_bar > ul > li:nth-child(4) > div.el-drawer__wrapper > div.el-drawer__container{
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    color: #0cfffb;
+}

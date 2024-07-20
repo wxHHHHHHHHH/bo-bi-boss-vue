@@ -1,0 +1,23 @@
+div>div.staff_body{
+    width: 100%;
+    height:100vh;
+    background-color: #fff;
+    margin-top: -20px;
+}
+
+div>div.staff_body>div.title{
+    align-content: center;
+    text-align: center;
+    font-size: 50px;
+}
+
+div>div.staff_body>div>div.block{
+    align-content: center;
+    text-align: center;
+ 
+}
+div>div.staff_body>div>.el-table th.el-table__cell>.cell{
+    color: #000;
+    font-size: 20px;
+}
+

@@ -8,7 +8,15 @@ ul,ol{
 
     list-style: none; /* 去除默认的列表样式 */
 }
-
+body {
+	background-color: #000000;
+	min-height: 98vh;
+	perspective: 1500px;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(#141e30, #243b55);
+	font-family: 'ali';
+}
 input{
     border: none;
     outline: none;
