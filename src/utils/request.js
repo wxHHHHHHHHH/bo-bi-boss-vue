@@ -13,7 +13,7 @@ const instance = axios.create({
 //所有的网络请求都会先走这个方法，我们可以在他里面为请求添加一些自定义的内容
 instance.interceptors.request.use(
   function(config) {
-    const user = store.getters.user
+    const user = Vue.$cookies.get('user')
     if (user){
      config.headers['token'] = user.token; // 将 token 添加到请求头中)
      console.log(config)

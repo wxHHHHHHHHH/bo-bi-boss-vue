@@ -15,8 +15,8 @@
                 </el-table-column>
                 <el-table-column prop="position" label="职位" width="100">
                     <template slot-scope="scope">
-                        <el-tag :type="scope.row.tag === 'ceo' ? 'primary' : 'success'" disable-transitions>{{
-                            scope.row.tag }}</el-tag>
+                        <el-tag :type="scope.row.position === 'ceo' ? 'primary' : 'success'" disable-transitions>{{
+                            scope.row.position }}</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column fixed="right" label="操作" width="100">
@@ -27,9 +27,10 @@
                 </el-table-column>
             </el-table>
             <div class="block">
-                <el-pagination layout="prev, pager, next" :total="totalItems"
+                <el-pagination layout="total,prev, pager, next" :total="totalItems"
       :current-page.sync="currentPage"
-      @current-change="handleCurrentChange" >
+      @current-change="getUserInfo"
+      @size-change="getUserInfo" >
                 </el-pagination>
             </div>
         </div>
@@ -61,6 +62,7 @@ export default {
                 this.tableData = res.list
                 this.currentPage = res.pageNum
                 this.totalItems = res.total
+                console.log(this.totalItems)
             }).catch(error => {
                 // 登录失败，弹出友好提示
                 this.$message.error(error)

@@ -16,13 +16,13 @@
                 <el-image  :src="require('./images/company.jpg')" fit="fit" ></el-image>
             </div>
             <div class="image" v-if="currentImage === 'vision'">
-                <el-image  :src="require('./images/banner2.jpg')" alt="Vision" fit="fill" ></el-image>
+                <el-image  :src="require('./images/集团愿景.jpg')" alt="Vision" fit="fit" ></el-image>
             </div>
             <div class="image" v-if="currentImage === 'activities'">
-                <el-image  :src="require('./images/banner3.jpg')" alt="Activities" fit="fill" ></el-image>
+                <video playsinline  controls poster width="100%" height="100%" src="https://vip.123pan.cn/1833477021/gao_da/%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91.mp4"></video>
             </div>
             <div class="image" v-if="currentImage === 'culture'">
-                <el-image  :src="require('./images/banner4.jpg')" alt="Culture" fit="fill" ></el-image>
+                <el-image  :src="require('./images/企业文化.jpg')" alt="Culture" fit="fit" ></el-image>
             </div>
         </div>
     </div>
