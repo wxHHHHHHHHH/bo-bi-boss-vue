@@ -13,6 +13,7 @@
     "element-ui": "^2.15.14",
     "vue": "^2.6.14",
     "vue-cookies": "^1.8.4",
+    "vue-responsive-components": "^0.2.3",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },

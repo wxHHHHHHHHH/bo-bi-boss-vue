@@ -1,0 +1,63 @@
+  /* Define styles here */
+  .circle{
+    width: 100%;
+    height: auto;
+    background-color: black;
+  }
+
+  .content {
+    width: 100%; /* Example styles */
+    height: auto;
+  }
+  #app > div > div > ol > li > div.info{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: aliceblue;
+
+  }
+  /* 头像样式 */
+  #app > div > div > ol > li > div.info>div.avatar{
+    flex: 20%;
+    background-color: rgb(33, 94, 147);
+  }
+  #app > div > div > ol > li > div > div.avatar > span.el-avatar {
+    margin: auto auto;
+
+}
+  /* 内容样式 */
+  #app > div > div > ol > li > div.info>div.info_body{
+    flex: 85%;
+    background-color: rgb(184, 53, 53);
+  }
+
+  /* 昵称 */
+  #app > div > div > ol > li > div > div.info_body > div.nickName{
+
+  }
+
+  /* 内容 */
+  #app > div > div > ol > li > div > div.info_body > div.content > div.media_data > ol{
+    width: 100%;
+  }
+  #app > div > div > ol > li > div > div.info_body > div.content{
+    margin-top: 2%;
+    display: grid;
+  }
+  #app > div > div > ol > li > div > div.info_body > div.content>div.media_data{
+    margin-top: 2%;
+    width: 100%;
+
+  }
+  #app > div > div > ol > li > div > div.info_body > div.content > div.media_data > ol > li{
+    float: left;
+    margin: 1% 1%;
+  }
+  #app > div > div > ol > li > div > div.info_body > div.time >span{
+    display: inline;
+    font-size: 5%;
+}
+  #app > div > div > ol > li > div > div.info_body > div.time >span.span_right{
+    border: 1% solid;
+    float: right;
+}

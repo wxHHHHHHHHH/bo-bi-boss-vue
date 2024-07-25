@@ -59,22 +59,74 @@
     display: block; /* 确保图片以块级元素显示 */
 }
 
-.div_body>.content>.image::-webkit-scrollbar {
+.div_body>.content>.image::-webkit-scrollbar ,.card_content::-webkit-scrollbar{
     width: 10px; /* 滚动条宽度 */
   }
   
   /* 滚动条轨道 */
-.div_body>.content>.imager::-webkit-scrollbar-track {
+.div_body>.content>.imager::-webkit-scrollbar-track,.card_content::-webkit-scrollbar-track {
     background: #f1f1f1; /* 轨道背景色 */
   }
   
   /* 滚动条滑块 */
-.div_body>.content>.image::-webkit-scrollbar-thumb {
+.div_body>.content>.image::-webkit-scrollbar-thumb,.card_content::-webkit-scrollbar-thumb {
     background-color: #888; /* 滑块颜色 */
     border-radius: 5px; /* 滑块圆角 */
   }
   
   /* 滚动条滑块悬停状态 */
-.div_body>.content>.image::-webkit-scrollbar-thumb:hover {
+.div_body>.content>.image::-webkit-scrollbar-thumb:hover ,.card_content::-webkit-scrollbar-thumb:hover{
     background-color: #555; /* 悬停时的滑块颜色 */
   }
+
+
+#app > div > div.content > div > div.el-carousel {
+    width: 1000px;
+    height: 600px;
+}
+#app > div > div.content > div > div > div > div.el-carousel__item > h1 {
+    text-align: center;
+}
+#app > div > div.content > div > div > div > div.el-carousel__item>div.card_content {
+
+    width: 100%;
+    height: 200px;
+    text-indent: 2em;
+    font-size: 25px;
+    line-height: 35px;
+    overflow-y: auto;
+    letter-spacing: 2px;
+    word-wrap: break-word; /* 对于旧浏览器，使用 word-wrap */
+    overflow-wrap: break-word; /* 对于现代浏览器，使用 overflow-wrap */
+
+}
+
+
+#app > div > div.content > div > div > div.el-carousel__container {
+    position: relative;
+    height: 300px;
+    top: 70px;
+}
+#app > div > div.content > div > div > div > div.el-carousel__item--card {
+    background-color: #8eddba;
+    filter: blur(5px)
+}
+
+#app > div > div.content > div > div > div > div.el-carousel__item--card.is-active {
+    z-index: 2;
+    background-color: #8cacda;
+    filter: blur(0px)
+}
+
+#app > div > div.content > div > div > ul {
+    bottom: -70px;
+    left: 0px;
+    text-align: center;
+    position: relative;
+    transform: none;
+}
+
+#app > div > div.content > div > div > ul > li > button{
+    background-color: #000;
+
+}

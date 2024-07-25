@@ -39,8 +39,7 @@
     </div>
     <el-carousel :interval="5000" arrow="never">
       <el-carousel-item el-carousel-item v-for="(item, index) in imagList" :key="index">
-        <video class="video_carousel" playsinline :src=item @mouseenter="showControls" @mouseleave="hideControls"
-          :controls="showingControls" width="1226" height="300" poster="./img/index/微信图片_20240715104013.jpg"></video>
+        <video class="video_carousel" playsinline :src=item @mouseenter="showControls" @mouseleave="hideControls" :controls="showingControls" width="1226" height="300" poster="./img/index/微信图片_20240715104013.jpg"></video>
       </el-carousel-item>
     </el-carousel>
     <div class="foot">
